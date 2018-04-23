@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+<body>
+
+<input id="textData" placeholder="Enter Text.."> <input id="translateTo" placeholder="Enter Language">
+<br><br>
+<button type="button" onclick="changeText()">Translate</button>
+
+
+<p id="result"></p>
+
+<script>
+function changeText(){
+var data = {
+		"textData" : $('#textData').val(),
+		"translateTo" : $('#translateTo').val()
+	}
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://192.168.1.31:4001/translate",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": JSON.stringify(data)
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+  $('#result').html(response);
+});
+}
+</script>
+</body>
+</html>
