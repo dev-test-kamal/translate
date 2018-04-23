@@ -7,7 +7,23 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+	"google-translate-token": "latest",
+	"async": "2.6.0",
+    "he": "1.1.1",
+    "request": "2.83.0",
+    "underscore": "1.8.3"
+  },
+  "google-translate": {
+      "version": "2.1.0",
+      "resolved": "https://registry.npmjs.org/google-translate/-/google-translate-2.1.0.tgz",
+      "integrity": "sha1-fnJ20Rf0NuUr2JVoo8t131BF66E=",
+      "requires": {
+        "async": "2.6.0",
+        "he": "1.1.1",
+        "request": "2.83.0",
+        "underscore": "1.8.3"
+    }
   },
   "engines": {
     "node": ">=8.0.0"
