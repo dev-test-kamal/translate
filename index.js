@@ -11,7 +11,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
-
+var port = process.env.PORT || 1337;
 
 app.post('/translate', function(req, res) {
 	var dataText = req.body.textData;
@@ -52,7 +52,6 @@ app.post('/translate', function(req, res) {
 	});
 });
 
-app.listen(4001, function(err) {
-	if (err) throw err; 
-  console.log('Server running at http://192.168.1.18:4001/');
+app.listen(port, function(err) {
+	if (err) throw err;
 });
